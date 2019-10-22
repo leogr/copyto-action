@@ -44,7 +44,7 @@ if [ "$?" -ne 0 ]; then
 fi
 
 echo "Copying '${SRC_PATH}' from '${GITHUB_REPOSITORY}' to '${DST_PATH}' into '${DST_REPO}'"
-mkdir -p dst/${DST_PATH} || exit "$?"
+mkdir -p `dirname dst/${DST_PATH}` || exit "$?"
 cp -rf src/${SRC_PATH} dst/${DST_PATH} || exit "$?"
 
 echo "Pushing https://github.com/${DST_REPO}"
